@@ -1,7 +1,5 @@
 // 玩家当前装备
 export interface PlayerEquipment {
-  coin: number; // 灵石（货币）
-  gem: number; // 宝石（高级货币）
   weapon: number; // 武器
   armor: number; // 防具
   accessory: number; // 法器

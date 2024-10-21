@@ -9,11 +9,15 @@ export interface PlayerInfo {
   level: number; // 玩家等级
   exp: number; // 当前经验
   fatigue: number; // 疲劳值
+  coin: number; // 灵石（货币）
+  gem: number; // 星石（高级货币）
   stats: PlayerStats; // 玩家属性
   cultivation: number; // 心法
-  backpack: PlayerBackpack[]; // 背包/仓库
+  backpack: PlayerBackpack[]; // 纳戒
   equipment: PlayerEquipment; // 当前装备
   skill: PlayerSkill[]; // 装备技能
   skillStudied: PlayerSkill[]; // 已学习技能
   position: number; // 玩家位置
+  arenaId: number; // 竞技场ID
+  needAscend: boolean; // 是否需要渡劫
 }
