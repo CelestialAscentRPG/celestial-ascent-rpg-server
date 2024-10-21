@@ -19,8 +19,14 @@ yarn install
 ```
 
 ### 2、配置环境变量
-
-TODO
+在根目录下创建`.env.development`文件，内容如下：
+```text
+DATABASE_HOST=数据库的IP地址
+DATABASE_PORT=11451
+DATABASE_USER=dev
+DATABASE_PASSWORD=密码
+DATABASE_NAME=celascent
+```
 
 ### 3、启动本地开发服务
 
