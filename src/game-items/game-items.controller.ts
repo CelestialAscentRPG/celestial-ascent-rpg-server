@@ -81,4 +81,28 @@ export class GameItemsController {
   remove(@Param('id') id: string) {
     return this.gameItemsService.remove(+id);
   }
+
+  @Post('bulk')
+  @ApiOperation({ summary: '批量创建游戏物品' })
+  @ApiBody({ type: [CreateGameItemDto] })
+  @ApiResponse({
+    status: 200,
+    description: '游戏物品批量创建成功',
+    type: [CreateGameItemDto],
+  })
+  async bulkCreate(@Body() createGameItemDtos: CreateGameItemDto[]) {
+    return this.gameItemsService.bulkCreate(createGameItemDtos);
+  }
+
+  @Patch('bulk')
+  @ApiOperation({ summary: '批量更新游戏物品' })
+  @ApiBody({ type: [UpdateGameItemDto] })
+  @ApiResponse({
+    status: 200,
+    description: '游戏物品批量更新成功',
+    type: [UpdateGameItemDto],
+  })
+  async bulkUpdate(@Body() updateGameItemDtos: UpdateGameItemDto[]) {
+    return this.gameItemsService.bulkUpdate(updateGameItemDtos);
+  }
 }

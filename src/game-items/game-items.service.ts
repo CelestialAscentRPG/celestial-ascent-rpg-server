@@ -58,4 +58,22 @@ export class GameItemsService {
       await queryRunner.release();
     }
   }
+
+  async bulkCreate(createGameItemDtos: CreateGameItemDto[]) {
+    return this.withTransaction(async (manager) => {
+      const items = createGameItemDtos.map((dto) =>
+        manager.create(GameItem, dto),
+      );
+      return await manager.save(items);
+    });
+  }
+
+  async bulkUpdate(updateGameItemDtos: UpdateGameItemDto[]) {
+    return this.withTransaction(async (manager) => {
+      const updatePromises = updateGameItemDtos.map((dto) => {
+        return manager.update(GameItem, dto.id, dto);
+      });
+      return await Promise.all(updatePromises);
+    });
+  }
 }
