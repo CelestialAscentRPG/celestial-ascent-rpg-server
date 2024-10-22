@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ArenaService } from './arena.service';
 import { CreateArenaDto } from './dto/create-arena.dto';
 import { UpdateArenaDto } from './dto/update-arena.dto';

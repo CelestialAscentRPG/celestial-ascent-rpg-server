@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ArenaLogService } from './arena-log.service';
 import { CreateArenaLogDto } from './dto/create-arena-log.dto';
 import { UpdateArenaLogDto } from './dto/update-arena-log.dto';
@@ -23,7 +31,10 @@ export class ArenaLogController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateArenaLogDto: UpdateArenaLogDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateArenaLogDto: UpdateArenaLogDto,
+  ) {
     return this.arenaLogService.update(+id, updateArenaLogDto);
   }
 

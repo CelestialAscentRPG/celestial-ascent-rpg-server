@@ -29,7 +29,10 @@ import { ArenaLogModule } from './arena-log/arena-log.module';
       inject: [ConfigService],
     }),
     ScheduleModule.forRoot(), // 计划任务执行器，TODO 天骄榜竞技场需要用到 https://docs.nestjs.com/techniques/task-scheduling
-    AscentUserModule, DungeonLogModule, ArenaModule, ArenaLogModule,
+    AscentUserModule,
+    DungeonLogModule,
+    ArenaModule,
+    ArenaLogModule,
   ],
   controllers: [AppController],
   providers: [AppService],

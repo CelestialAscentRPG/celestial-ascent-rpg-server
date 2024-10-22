@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { DungeonLogService } from './dungeon-log.service';
 import { CreateDungeonLogDto } from './dto/create-dungeon-log.dto';
 import { UpdateDungeonLogDto } from './dto/update-dungeon-log.dto';
@@ -23,7 +31,10 @@ export class DungeonLogController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDungeonLogDto: UpdateDungeonLogDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateDungeonLogDto: UpdateDungeonLogDto,
+  ) {
     return this.dungeonLogService.update(+id, updateDungeonLogDto);
   }
 
