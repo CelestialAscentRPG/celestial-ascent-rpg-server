@@ -8,5 +8,5 @@ export interface ArenaInfo {
   defenseInfo: PlayerEquipment; // 玩家防御信息
   defenseSkill: PlayerSkill[]; // 玩家防御技能
   currentRank: number; // 当前排名
-  isUnderChallenged: boolean; // 是否正在被挑战;
+  isUnderChallenged: boolean; // 是否正在被挑战
 }
