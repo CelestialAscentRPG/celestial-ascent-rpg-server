@@ -47,24 +47,28 @@ export class GameItem {
   @Column({
     type: 'int',
     comment: '物品的价格',
+    default: 0,
   })
   value: number;
 
   @Column({
     type: 'int',
     comment: '最低使用等级',
+    default: 1,
   })
   levelMin: number;
 
   @Column({
     type: 'int',
-    comment: '品阶',
+    comment: '品阶 0: 普通 1: 绿色 2: 蓝色 3: 紫色 4: 金色 5: 橙色 6: 红色',
+    default: 0,
   })
   grades: number;
 
   @Column({
     type: 'json',
     comment: '扩展属性，如装备的属性加成',
+    nullable: true,
   })
   extendedAttributes: any;
 }
