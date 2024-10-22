@@ -3,7 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AscentUserModule } from './ascent-user/ascent-user.module';
 
 @Module({
   imports: [
@@ -24,7 +23,6 @@ import { AscentUserModule } from './ascent-user/ascent-user.module';
       }),
       inject: [ConfigService],
     }),
-    AscentUserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
