@@ -832,7 +832,7 @@
 
 "@nestjs/swagger@^7.4.2":
   version "7.4.2"
-  resolved "https://registry.npmmirror.com/@nestjs/swagger/-/swagger-7.4.2.tgz"
+  resolved "https://registry.npmmirror.com/@nestjs/swagger/-/swagger-7.4.2.tgz#3b72eb8a6d1366e8e211f9a90681283bb18817e9"
   integrity sha512-Mu6TEn1M/owIvAx2B4DUQObQXqo2028R2s9rSZ/hJEgBK95+doTwS0DjmVA2wTeZTyVtXOoN7CsoM5pONBzvKQ==
   dependencies:
     "@microsoft/tsdoc" "^0.15.0"
@@ -4081,6 +4081,13 @@ neo-async@^2.6.2:
   resolved "https://registry.npmmirror.com/neo-async/-/neo-async-2.6.2.tgz"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+nest-knife4j@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/nest-knife4j/-/nest-knife4j-1.0.1.tgz#9774ab60ee9ee8e65eb47bba0f08ada883ec9e82"
+  integrity sha512-TD1LmxzclBddOygIDIRjr3jIwj+C3dp69G4Sy+QwAiiuQQQAxwaGXioCB3ibr/SLQ9nuR8klYehzS3HjS32Nfw==
+  dependencies:
+    user "^0.0.0"
+
 node-abort-controller@^3.0.1:
   version "3.1.1"
   resolved "https://registry.npmmirror.com/node-abort-controller/-/node-abort-controller-3.1.1.tgz"
@@ -5190,6 +5197,11 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+user@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.npmmirror.com/user/-/user-0.0.0.tgz#f27f1b23fc511f2a8efa40db55cfba123824e02a"
+  integrity sha512-eRNM5isOvr6aEFAGi1CqAkmLkYxW2NJ5ThhbD+6IJXYKM1mo7Gtxx4mQIveHz/5K3p/SVnlW9k17ETn+QAu8IQ==
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"

@@ -19,7 +19,7 @@ export class GameItem {
   })
   description: string;
 
-  // 物品类型 0: 武器 1: 防具 2: 消耗品 3: 材料 4: 关键道具 5: 法器 6: 灵宝 7: 护身符
+  // 物品类型 1: 武器 2: 防具 3: 消耗品 4: 材料 5: 关键道具 6: 法器 7: 灵宝 8: 护身符
   @Column({
     type: 'enum',
     enum: [
@@ -59,11 +59,11 @@ export class GameItem {
   levelMin: number;
 
   @Column({
-    type: 'int',
-    comment: '品阶 0: 普通 1: 绿色 2: 蓝色 3: 紫色 4: 金色 5: 橙色 6: 红色',
-    default: 0,
+    type: 'enum',
+    comment: '品阶 1: 普通 2: 绿色 3: 蓝色 4: 紫色 5: 金色 6: 橙色 7: 红色',
+    enum: ['normal', 'green', 'blue', 'purple', 'gold', 'orange', 'red'],
   })
-  grades: number;
+  grades: 'normal' | 'green' | 'blue' | 'purple' | 'gold' | 'orange' | 'red';
 
   @Column({
     type: 'json',

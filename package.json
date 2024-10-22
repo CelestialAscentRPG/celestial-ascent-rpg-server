@@ -36,6 +36,7 @@
     "crypto-js": "^4.2.0",
     "helmet": "^8.0.0",
     "mysql2": "^3.11.3",
+    "nest-knife4j": "^1.0.1",
     "radash": "^12.1.0",
     "reflect-metadata": "^0.2.0",
     "rxjs": "^7.8.1",
