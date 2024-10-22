@@ -1,20 +1,21 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 import { PublicEntity } from '../../utils/PublicEntity';
 import { Exclude } from 'class-transformer';
+import { PlayerInfo } from '../../player-info/entities/player-info.entity';
 
 /**
  * 用户类实体
  */
 @Entity()
 export class AscentUser extends PublicEntity {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn()
   id: number;
 
   @Column({
     type: 'varchar',
     length: 50,
     unique: true,
-    comment: '电子邮件地址，也是账号',
+    comment: '电子邮件地址，即账号',
   })
   email: string;
 
@@ -40,4 +41,7 @@ export class AscentUser extends PublicEntity {
     nullable: true,
   })
   token: string;
+
+  @OneToMany(() => PlayerInfo, (playerInfo) => playerInfo.ascentUser)
+  playerInfo: PlayerInfo[]; // 关联的玩家信息
 }

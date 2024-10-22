@@ -5,40 +5,42 @@ import {
   OneToOne,
   JoinColumn,
   OneToMany,
+  ManyToOne,
 } from 'typeorm';
 import { PlayerBackpack } from '../../player-backpack/entities/player-backpack.entity';
 import { PlayerEquipment } from '../../player-equipment/entities/player-equipment.entity';
 import { PlayerStats } from '../../player-stats/entities/player-stat.entity';
 import { PlayerSkill } from '../../player-skill/entities/player-skill.entity';
+import { AscentUser } from '../../ascent-user/entities/ascent-user.entity';
 
 @Entity()
 export class PlayerInfo {
   @PrimaryGeneratedColumn()
-  id: number; // 玩家ID，自动生成
+  id: number; // 玩家信息ID，自动生成
 
-  @Column({ type: 'varchar', length: 50, comment: '玩家名称' })
+  @Column({ type: 'varchar', length: 50 })
   name: string; // 玩家名称，最大长度50
 
-  @Column({ type: 'int', comment: '玩家等级' })
+  @Column({ type: 'int' })
   level: number; // 玩家等级
 
-  @Column({ type: 'int', comment: '当前经验' })
+  @Column({ type: 'int' })
   exp: number; // 当前经验
 
-  @Column({ type: 'int', comment: '疲劳值' })
+  @Column({ type: 'int' })
   fatigue: number; // 疲劳值
 
-  @Column({ type: 'int', comment: '灵石' })
+  @Column({ type: 'int' })
   coin: number; // 灵石（货币）
 
-  @Column({ type: 'int', comment: '星石' })
+  @Column({ type: 'int' })
   gem: number; // 星石（高级货币）
 
   @OneToOne(() => PlayerStats, { cascade: true })
   @JoinColumn()
   stats: PlayerStats; // 玩家属性
 
-  @Column({ type: 'int', comment: '心法' })
+  @Column({ type: 'int' })
   cultivation: number; // 心法
 
   @OneToMany(() => PlayerBackpack, (backpack) => backpack.playerInfo, {
@@ -58,12 +60,16 @@ export class PlayerInfo {
   })
   skillStudied: PlayerSkill[]; // 已学习技能
 
-  @Column({ type: 'int', comment: '玩家位置' })
+  @Column({ type: 'int' })
   position: number; // 玩家位置
 
-  @Column({ type: 'int', comment: '竞技场ID' })
+  @Column({ type: 'int' })
   arenaId: number; // 竞技场ID
 
-  @Column({ type: 'boolean', comment: '是否需要渡劫' })
+  @Column({ type: 'boolean' })
   needAscend: boolean; // 是否需要渡劫
+
+  @ManyToOne(() => AscentUser, (ascentUser) => ascentUser.playerInfo)
+  @JoinColumn({ name: 'userId' }) // 外键关联到 AscentUser 表的 id
+  ascentUser: AscentUser; // 关联的用户
 }
