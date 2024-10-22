@@ -7,15 +7,9 @@ import { Exclude } from 'class-transformer';
  */
 @Entity()
 export class AscentUser extends PublicEntity {
-  /**
-   * 用户的唯一标识符
-   */
   @PrimaryGeneratedColumn('uuid')
   id: number;
 
-  /**
-   * 用户的电子邮件地址，也是账号
-   */
   @Column({
     type: 'varchar',
     length: 50,
@@ -24,9 +18,6 @@ export class AscentUser extends PublicEntity {
   })
   email: string;
 
-  /**
-   * 用户的密码，MD5加密
-   */
   @Column({
     type: 'varchar',
     length: 32,
@@ -35,9 +26,6 @@ export class AscentUser extends PublicEntity {
   @Exclude()
   password: string;
 
-  /**
-   * 用户的昵称
-   */
   @Column({
     type: 'varchar',
     length: 50,
@@ -45,9 +33,6 @@ export class AscentUser extends PublicEntity {
   })
   nickname: string;
 
-  /**
-   * 用户的 token
-   */
   @Column({
     type: 'varchar',
     length: 255,
