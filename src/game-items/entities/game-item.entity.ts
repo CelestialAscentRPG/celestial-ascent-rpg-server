@@ -33,6 +33,7 @@ export class GameItem {
       'amulet',
     ],
     comment: '物品类型',
+    default: 'consumable',
   })
   type:
     | 'weapon'
@@ -62,6 +63,7 @@ export class GameItem {
     type: 'enum',
     comment: '品阶 1: 普通 2: 绿色 3: 蓝色 4: 紫色 5: 金色 6: 橙色 7: 红色',
     enum: ['normal', 'green', 'blue', 'purple', 'gold', 'orange', 'red'],
+    default: 'normal',
   })
   grades: 'normal' | 'green' | 'blue' | 'purple' | 'gold' | 'orange' | 'red';
 

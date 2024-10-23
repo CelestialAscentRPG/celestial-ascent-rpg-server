@@ -23,12 +23,14 @@ export class Dungeon {
     type: 'enum',
     enum: ['easy', 'medium', 'hard', 'hell', 'reward', 'special'],
     comment: '秘境难度',
+    default: 'easy',
   })
   difficulty: 'easy' | 'medium' | 'hard' | 'hell' | 'reward' | 'special';
 
   @Column({
-    type: 'smallint',
+    type: 'int',
     comment: '推荐等级',
+    default: 1,
   })
   recommendedLevel: number;
 
