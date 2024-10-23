@@ -4,7 +4,7 @@ import { UpdateDungeonDto } from './dto/update-dungeon.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Dungeon } from './entities/dungeon.entity';
-import { TransactionManagerService } from '../utils/TransactionManagerService';
+import { TransactionManagerService } from '../../transaction-manager/transaction-manager.service';
 
 @Injectable()
 export class DungeonService {

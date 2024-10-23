@@ -4,7 +4,7 @@ import { UpdateGameItemDto } from './dto/update-game-item.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { GameItem } from './entities/game-item.entity';
-import { TransactionManagerService } from '../utils/TransactionManagerService';
+import { TransactionManagerService } from '../../transaction-manager/transaction-manager.service';
 
 @Injectable()
 export class GameItemsService {
