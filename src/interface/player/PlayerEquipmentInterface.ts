@@ -1,5 +1,5 @@
 // 玩家当前装备
-export interface PlayerEquipment {
+export interface PlayerEquipmentInterface {
   weapon: number; // 武器
   armor: number; // 防具
   accessory: number; // 法器

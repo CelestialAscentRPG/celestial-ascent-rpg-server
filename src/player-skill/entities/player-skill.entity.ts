@@ -1,10 +1,17 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  JoinColumn,
+} from 'typeorm';
 import { PlayerInfo } from '../../player-info/entities/player-info.entity';
+import { Skill } from '../../skill/entities/skill.entity';
 
 @Entity()
 export class PlayerSkill {
   @PrimaryGeneratedColumn()
-  id: number; // 技能ID，自动生成
+  id: number; // ID，自动生成
 
   @Column({ type: 'int', comment: '技能ID' })
   skillId: number; // 技能ID
@@ -16,5 +23,10 @@ export class PlayerSkill {
   skillExp: number; // 技能经验
 
   @ManyToOne(() => PlayerInfo, (playerInfo) => playerInfo.skill)
+  @JoinColumn({ name: 'playerInfoId' })
   playerInfo: PlayerInfo; // 关联的玩家信息
+
+  @ManyToOne(() => Skill, (skill) => skill.playerSkills)
+  @JoinColumn({ name: 'skillId', referencedColumnName: 'id' })
+  skill: Skill; // 关联的技能
 }

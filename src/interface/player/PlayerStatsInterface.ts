@@ -1,5 +1,5 @@
 // 玩家属性
-export interface PlayerStats {
+export interface PlayerStatsInterface {
   health: number; // 气血
   attack: number; // 攻击
   critical: number; // 暴击

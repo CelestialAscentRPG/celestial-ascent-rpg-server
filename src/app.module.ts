@@ -16,6 +16,7 @@ import { PlayerBackpackModule } from './player-backpack/player-backpack.module';
 import { PlayerInfoModule } from './player-info/player-info.module';
 import { PlayerSkillModule } from './player-skill/player-skill.module';
 import { PlayerStatsModule } from './player-stats/player-stats.module';
+import { SkillModule } from './skill/skill.module';
 
 @Module({
   imports: [
@@ -49,6 +50,7 @@ import { PlayerStatsModule } from './player-stats/player-stats.module';
     PlayerInfoModule,
     PlayerSkillModule,
     PlayerStatsModule,
+    SkillModule,
   ],
   controllers: [AppController],
   providers: [AppService],
