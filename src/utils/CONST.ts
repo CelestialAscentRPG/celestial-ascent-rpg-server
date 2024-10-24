@@ -5,13 +5,13 @@ const BASE_GROW_UP_NUM: PlayerStatsInterface = {
   accuracy: 1.5,
   attack: 5,
   critical: 2,
-  criticalDamage: 0,
+  criticalDamage: 1,
   dodge: 1.5,
   health: 10,
-  magicalPierces: 0,
-  magicalResistance: 0,
-  physicalPierces: 0,
-  physicalResistance: 0,
+  magicalPierces: 1,
+  magicalResistance: 1,
+  physicalPierces: 1,
+  physicalResistance: 1,
 };
 
 // 基础成长指数（基于等级的幂指数）
